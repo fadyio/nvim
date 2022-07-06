@@ -14,6 +14,10 @@ vim.cmd([[
    autocmd BufRead * autocmd FileType <buffer> ++once
       \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
 ]])
+-- inline diagnostic
+-- vim.cmd([[
+-- autocmd CursorHold * lua vim.diagnostic.open_float({"line"})
+-- ]])
 -- Remove statusline and tabline when in Alpha
 vim.api.nvim_create_autocmd({ "User" }, {
 	pattern = { "AlphaReady" },
