@@ -98,8 +98,8 @@ return require("packer").startup(function(use)
 	use("RRethy/nvim-treesitter-endwise")
 	use("windwp/nvim-ts-autotag")
 	use("p00f/nvim-ts-rainbow")
-  -- Clean and elegant distraction-free writing for NeoVim 
-  use ("Pocco81/TrueZen.nvim")
+	-- Clean and elegant distraction-free writing for NeoVim
+	use("Pocco81/TrueZen.nvim")
 	-- 	---------------------------------------------------------------------------- }}}
 	-- 	-------------------------------LSP FEATURES------------------------------ {{{
 	use({
@@ -131,11 +131,12 @@ return require("packer").startup(function(use)
 
 	-- code runner
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
-  -- sourcegraph for nvim
-  use {
-    'tjdevries/sg.nvim',
-    commit = '76354e9f0b6de39134ec9efcd022f079ae0ce02b'
-  }
+	-- sourcegraph for nvim
+	use({
+		"tjdevries/sg.nvim",
+		commit = "76354e9f0b6de39134ec9efcd022f079ae0ce02b",
+	})
+
 	-- 	---------------------------------------------------------------------------- }}}
 	-- 	-------------------------------EDITOR FEATURES------------------------------ {{{
 	-- Smooth scrolling for ANY movement command
