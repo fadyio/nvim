@@ -30,7 +30,7 @@ vim.opt.foldenable = true -- Enable folding
 vim.opt.swapfile = false -- creates a swapfile
 --------------------------------------------------------------------------- }}}
 -- UI config
-vim.opt.guifont = "monospace:h15" -- the font used in graphical neovim applications
+vim.opt.guifont = "JetBrainsMono Nerd Font:h17" -- the font used in graphical neovim applications
 vim.opt.number = true -- show line numbers
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.pumblend = 10 -- Popup blend
