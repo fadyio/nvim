@@ -133,7 +133,12 @@ return require("packer").startup(function(use)
 		"tjdevries/sg.nvim",
 		commit = "76354e9f0b6de39134ec9efcd022f079ae0ce02b",
 	})
-
+	-- 	---------------------------------------------------------------------------- }}}k
+	-- 	-------------------------------  Debug Adapter ------------------------------ {{{
+	-- DAP (Debug Adapter Protocol)
+	use("mfussenegger/nvim-dap")
+	-- nvim-dap-ui
+	use("rcarriga/nvim-dap-ui")
 	-- 	---------------------------------------------------------------------------- }}}
 	-- 	-------------------------------EDITOR FEATURES------------------------------ {{{
 	-- Smooth scrolling for ANY movement command
