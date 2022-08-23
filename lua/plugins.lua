@@ -167,6 +167,11 @@ return require("packer").startup(function(use)
 	use("nvim-neorg/neorg")
 	--  Neovim motions on speed!
 	use("phaazon/hop.nvim")
+  -- use nvim in the browser 
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end 
+}
 	-- wakatime plugin
 	use("wakatime/vim-wakatime")
 	-------------- telescope.nvim

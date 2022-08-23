@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/filetype.nvim",
     url = "https://github.com/nathom/filetype.nvim"
   },
+  firenvim = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/firenvim",
+    url = "https://github.com/glacambre/firenvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -261,6 +266,16 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
     url = "https://github.com/yamatsum/nvim-cursorline"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-gps"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-gps",
@@ -360,6 +375,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sqlite.lua",
     url = "https://github.com/tami5/sqlite.lua"
+  },
+  ["synthwave84.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/synthwave84.nvim",
+    url = "https://github.com/lunarvim/synthwave84.nvim"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
