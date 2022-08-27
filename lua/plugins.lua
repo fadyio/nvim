@@ -151,8 +151,6 @@ return require("packer").startup(function(use)
 	use("ahmedkhalf/project.nvim")
 	-- nvim-tree
 	use("kyazdani42/nvim-tree.lua")
-	-- Easily jumb between files
-	use("ThePrimeagen/harpoon")
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("sindrets/diffview.nvim")
@@ -163,15 +161,8 @@ return require("packer").startup(function(use)
 	use("folke/trouble.nvim")
 	-- white_check_mark Highlight, list and search todo comments in your projects
 	use("folke/todo-comments.nvim")
-	--TODO: hellp this problesm
-	use("nvim-neorg/neorg")
 	--  Neovim motions on speed!
 	use("phaazon/hop.nvim")
-  -- use nvim in the browser 
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end 
-}
 	-- wakatime plugin
 	use("wakatime/vim-wakatime")
 	-------------- telescope.nvim
