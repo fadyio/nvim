@@ -29,8 +29,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- SearchBox
-keymap("n", "/", ":SearchBoxIncSearch<CR>", { noremap = true })
-keymap("n", "<leader>s/", ":SearchBoxReplace<CR>", { noremap = true })
+--[[ keymap("n", "/", ":SearchBoxIncSearch<CR>", { noremap = true }) ]]
+--[[ keymap("n", "<leader>s/", ":SearchBoxReplace<CR>", { noremap = true }) ]]
 -- unhighlight what you searched for
 keymap("n", "<Esc><Esc>", "<Esc>:nohlsearch<CR><Esc>", { noremap = true })
 -- Insert --
