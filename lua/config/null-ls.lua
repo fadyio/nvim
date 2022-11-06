@@ -28,30 +28,8 @@ null_ls.setup({
 	end,
 	sources = {
 		-- formatting
-		formatting.stylua, --lua
-		formatting.clang_format, -- c and c++
-		formatting.rustfmt, -- for rust
-		formatting.shfmt, -- for shell
-		formatting.markdownlint, --for markdown
-		formatting.cmake_format, --for cmake files
-		formatting.sqlfluff, -- for sql and postgres
-		formatting.yapf, --for python
-
 		-- diagnostics
-		diagnostics.ansiblelint, -- for ansible
-		diagnostics.codespell, -- for text files
-		diagnostics.cppcheck, -- for c and c++
-		diagnostics.eslint_d, -- for javascript
-		diagnostics.flake8, -- for python
-		diagnostics.gitlint, -- for git
-		diagnostics.luacheck, -- for lua
-		diagnostics.markdownlint, -- for markdown
-		diagnostics.shellcheck, -- for shell
-		diagnostics.semgrep, -- Static analysis at ludicrous speedo
-		diagnostics.zsh, -- for zsh
-		diagnostics.yamllint, -- for yaml
-
 		-- actions
-		actions.gitsigns,
+		------------------------Using Mason-Null-Ls.nvim
 	},
 })

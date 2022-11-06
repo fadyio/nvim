@@ -118,6 +118,7 @@ return require("packer").startup(function(use)
 			{ "williamboman/mason-lspconfig.nvim" },
 			{ "jayp0521/mason-null-ls.nvim" },
 			{ "jayp0521/mason-nvim-dap.nvim" },
+			{ "jayp0521/mason-nvim-dap.nvim" },
 			-- cmp plugins
 			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-buffer" },
