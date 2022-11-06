@@ -9,9 +9,8 @@ end
 
 configs.setup({
 	ensure_installed = "all",
-	"norg",
 	sync_install = false,
-	ignore_install = { "jsonc", "fusion", "ocamllex","phpdoc" },
+	ignore_install = { "jsonc", "fusion", "ocamllex", "phpdoc" },
 
 	autopairs = {
 		enable = true,
@@ -29,8 +28,7 @@ configs.setup({
 		-- colors = {}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
-	indent = { enable = true, disable = { "yaml" } },
-
+	indent = { enable = true, disable = { "" } },
 	context_commentstring = { enable = true },
 	autotag = { enable = true },
 	endwise = { enable = true },

@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["DAPInstall.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
+    url = "https://github.com/ravenxrz/DAPInstall.nvim"
+  },
   ["FixCursorHold.nvim"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
@@ -119,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-cmdline-history",
     url = "https://github.com/dmitmel/cmp-cmdline-history"
   },
-  ["cmp-conjure"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-conjure",
-    url = "https://github.com/PaterJason/cmp-conjure"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -148,26 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["comment-box.nvim"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/comment-box.nvim",
-    url = "https://github.com/LudoPinelli/comment-box.nvim"
-  },
-  conjure = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/conjure",
-    url = "https://github.com/Olical/conjure"
-  },
-  ["deol.nvim"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/deol.nvim",
-    url = "https://github.com/Shougo/deol.nvim"
-  },
-  ["diffview.nvim"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/diffview.nvim",
-    url = "https://github.com/sindrets/diffview.nvim"
   },
   edge = {
     loaded = true,
@@ -236,6 +216,26 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
+  },
+  ["mason-nvim-dap.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/mason-nvim-dap.nvim",
+    url = "https://github.com/jayp0521/mason-nvim-dap.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   neogit = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/neogit",
@@ -271,11 +271,6 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-cursorline"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
-    url = "https://github.com/yamatsum/nvim-cursorline"
-  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-dap",
@@ -290,11 +285,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-gps",
     url = "https://github.com/SmiteshP/nvim-gps"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -371,11 +361,6 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/searchbox.nvim",
     url = "https://github.com/VonHeikemen/searchbox.nvim"
   },
-  ["sg.nvim"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sg.nvim",
-    url = "https://github.com/tjdevries/sg.nvim"
-  },
   sniprun = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sniprun",
@@ -446,15 +431,10 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  ["vim-moonfly-colors"] = {
+  ["vim-illuminate"] = {
     loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
-  },
-  ["vim-nightfly-guicolors"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
-    url = "https://github.com/bluz71/vim-nightfly-guicolors"
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-wakatime"] = {
     loaded = true,
