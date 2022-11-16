@@ -4,8 +4,10 @@ if not status_ok then
 end
 
 indent_blankline.setup({
+	enabled = true,
 	char = "▏",
 	show_trailing_blankline_indent = false,
+	colored_indent_levels = false,
 	show_first_indent_level = true,
 	use_treesitter = true,
 	show_current_context = true,
