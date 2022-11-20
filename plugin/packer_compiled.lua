@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cinnamon.nvim"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cinnamon.nvim",
