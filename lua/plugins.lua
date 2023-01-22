@@ -156,7 +156,7 @@ return require("packer").startup(function(use)
 	-- powerful autopair plugin for Neovim that supports multiple characters
 	use("windwp/nvim-autopairs")
 	-- nvim-tree
-	use("kyazdani42/nvim-tree.lua")
+	use("nvim-tree/nvim-tree.lua")
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("kdheepak/lazygit.nvim")
