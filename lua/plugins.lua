@@ -114,6 +114,7 @@ return require("packer").startup(function(use)
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
 			{ "williamboman/mason.nvim" },
+			{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
 			{ "jayp0521/mason-null-ls.nvim" },
 			{ "jayp0521/mason-nvim-dap.nvim" },
