@@ -35,12 +35,13 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
 -- SearchBox
---[[ keymap("n", "/", ":SearchBoxIncSearch<CR>", { noremap = true }) ]]
-keymap("n", "<leader>s/", ":SearchBoxReplace<CR>", { noremap = true })
+-- keymap("n", "<leader>s/", ":SearchBoxReplace<CR>", { noremap = true })
 
 -- unhighlight what you searched for
 keymap("n", "<Esc><Esc>", "<Esc>:nohlsearch<CR><Esc>", { noremap = true })
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
@@ -53,7 +54,7 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Comment and Comment box
@@ -72,6 +73,10 @@ keymap("i", "<M-l>", "<Cmd>lua require('comment-box').cline()<CR>", {})
 -- Git
 keymap("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
 
+--  markdown preview plugin for (neo)vim
+keymap("n", "<leader>MM", "<cmd>MarkdownPreviewToggle<CR>", opts)
+keymap("n", "<leader>MS", "<cmd>MarkdownPreviewStop<CR>", opts)
+
 -- splits
 keymap("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap("n", "<leader>sh", "<C-w>s") -- split window horizontally
@@ -80,9 +85,6 @@ keymap("n", "<leader>sx", ":close<CR>") --  close the current split window
 
 -- tabs
 keymap("n", "<leader>to", ":tabnew<CR>") -- open new tab
-
---  Maximizes and restores the current window in Vim.
-keymap("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- Visual Block --
 -- Move text up and down
@@ -101,7 +103,3 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 -- keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 -- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
-keymap({ "n", "x" }, "<leader>rs", function()
-	require("ssr").open()
-end)

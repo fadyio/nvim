@@ -1,6 +1,8 @@
--- Written by @Fadynagh from http://fadyio.com
--- Email:me@fadyio.com
--- Github: @fadyio
+--                ╭─────────────────────────────────────────────╮
+--                │ Written by Fady nagh from http://fadyio.com │
+--                │             Email:me@fadyio.com             │
+--                │               Github: @fadyio               │
+--                ╰─────────────────────────────────────────────╯
 --
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
@@ -10,8 +12,8 @@ end
 local setup = {
 	active = true,
 	plugins = {
-		marks = false, -- shows a list of your marks on ' and `
-		registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+		marks = true, -- shows a list of your marks on ' and `
+		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
 			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20, -- how many suggestions should be shown in the list?
@@ -99,16 +101,12 @@ local mappings = {
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["x"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-	["f"] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Find files",
-	},
+	["f"] = { "<cmd>Telescope file_browser<cr>", "Find files" },
 	["z"] = {
 		"<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>",
 		"Find hidden files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["P"] = { "<cmd>Telescope file_browser<cr>", "file browser" },
 
 	p = {
 		name = "Packer",
@@ -147,9 +145,8 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-		w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>Mason<cr>", "Mason Info" },
@@ -162,19 +159,11 @@ local mappings = {
 			"Prev Diagnostic",
 		},
 		l = { vim.lsp.codelens.run, "CodeLens Action" },
-		q = { vim.diagnostic.setloclist, "Quickfix" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
-		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
-	},
-	r = {
-		name = "code runner",
-		d = { "<Cmd>SnipRun<CR>", "Line Run" },
-		r = { "<cmd>SnipReset<CR>", "Snip Reset" },
-		i = { "<cmd>SnipInfo<CR>", "Snip Info" },
 	},
 	m = {
 		name = "Motions",
@@ -184,13 +173,6 @@ local mappings = {
 		},
 		p = { "<cmd>HopPattern<CR>", "Hop Pattern" },
 		l = { "<cmd>HopLine<CR>", "Hop Line" },
-	},
-	h = {
-		name = "Harpooning",
-		a = { "<cmd>lua require 'harpoon.mark'.add_file()<CR>", "Add file" },
-		t = { "<cmd>lua require 'harpoon.ui'.toggle_quick_menu()<CR>", "toggle quick menu" },
-		n = { "<cmd>lua require 'harpoon.ui'.nav_next()<CR>", "Next file" },
-		p = { "<cmd>lua require 'harpoon.ui'.nav_prev()<CR>", "previous file" },
 	},
 
 	t = {
@@ -202,12 +184,14 @@ local mappings = {
 		q = { "<cmd>Trouble quickfix<CR>", "Trouble quickfix " },
 		r = { "<cmd>Trouble lsp_references<CR>", "lsp references" },
 	},
+
 	T = {
 		name = "TODO",
 		q = { "<cmd>TodoQuickFix<CR>", "Todo Quick Fix" }, --This uses the quickfix list to show all todos in your project.
 		l = { "<cmd>TodoLocList<CR>", "Todo LocList" }, --This uses the location list to show all todos in your project.
 		t = { "<cmd>TodoTelescope<CR>", "Todo Telescope" }, --Search through all project todos with Telescope
 	},
+	-- TODO: config the debuger
 
 	-- " Available Debug Adapters:
 	-- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
@@ -216,30 +200,27 @@ local mappings = {
 	-- " Debug Adapter protocol:
 	-- "   https://microsoft.github.io/debug-adapter-protocol/
 	-- " Debugging
-	d = {
-		name = "Debug",
-		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-		b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-		C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-		d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-		g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-		i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-		o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-		u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-		p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-		s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-		q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-	},
+	-- d = {
+	-- 	name = "Debug",
+	-- 	t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+	-- 	b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+	-- 	c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+	-- 	C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+	-- 	d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+	-- 	g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+	-- 	i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+	-- 	o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+	-- 	u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+	-- 	p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+	-- 	r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+	-- 	s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+	-- 	q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+	-- },
 
 	s = {
 		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		C = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		d = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },

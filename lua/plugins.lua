@@ -82,8 +82,6 @@ return require("packer").startup(function(use)
 	use("rcarriga/nvim-notify")
 	-- Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 	use("folke/noice.nvim")
-	--  Treesitter based structural search and replace plugin for Neovim.
-	use("cshuaimin/ssr.nvim")
 	--  Go development plugin for Vim
 	use("fatih/vim-go")
 
@@ -103,9 +101,7 @@ return require("packer").startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("RRethy/nvim-treesitter-endwise")
 	use("windwp/nvim-ts-autotag")
-	use("p00f/nvim-ts-rainbow")
 
 	-- 	---------------------------------------------------------------------------- }}}k
 	-- 	-------------------------------LSP FEATURES------------------------------ {{{
@@ -137,8 +133,6 @@ return require("packer").startup(function(use)
 	})
 	-- null-ls.nvim
 	use("jose-elias-alvarez/null-ls.nvim")
-	-- code runner
-	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	--  Clarify and beautify your comments using boxes and lines.
 	use("LudoPinelli/comment-box.nvim")
 
@@ -171,13 +165,8 @@ return require("packer").startup(function(use)
 	use("wakatime/vim-wakatime")
 	-- telescope.nvim
 	use("nvim-telescope/telescope.nvim")
-	use("crispgm/telescope-heading.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use("nvim-telescope/telescope-media-files.nvim")
-	use("nvim-telescope/telescope-github.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
-	use("nvim-telescope/telescope-frecency.nvim")
-	use("nvim-telescope/telescope-ui-select.nvim")
 	--  The superior project management solution for Neovim
 	use("ahmedkhalf/project.nvim")
 
@@ -185,10 +174,7 @@ return require("packer").startup(function(use)
 	-------------------------------  colorScheme  ------------------------------ {{{
 
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("mhartington/oceanic-next")
-	use("titanzero/zephyrium")
 	use("sainnhe/gruvbox-material")
-	use("lunarvim/synthwave84.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

@@ -1,8 +1,10 @@
---- Written by @Fadynagh from http://fadyio.com
--- Email:me@fadyio.com
--- Github: @fady0
+--              ╭─────────────────────────────────────────────────╮
+--              │     Written by @Fadynagh from http://fadyio.com │
+--              │               Email:me@fadyio.com               │
+--              │                 Github: @fadyio                 │
+--              ╰─────────────────────────────────────────────────╯
 
--- Setup nvim-cmp.
+-- Setup nvim-autopairs.
 local status_ok, npairs = pcall(require, "nvim-autopairs")
 if not status_ok then
 	return
@@ -14,7 +16,6 @@ npairs.setup({
 	ts_config = {
 		lua = { "string", "source" },
 		javascript = { "string", "template_string" },
-		java = false,
 	},
 
 	fast_wrap = {
