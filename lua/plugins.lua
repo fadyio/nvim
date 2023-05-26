@@ -1,13 +1,9 @@
 --                ╭─────────────────────────────────────────────╮
 --                │ Written by Fady nagh from http://fadyio.com │
---                │                                             │
 --                │             Email:me@fadyio.com             │
---                │                                             │
 --                │               Github: @fadyio               │
---                │                                             │
 --                │              My Neovim Plugins              │
 --                ╰─────────────────────────────────────────────╯
-
 -- Bootstrapping Packer Plugins manager
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -134,6 +130,10 @@ return require("packer").startup(function(use)
 	use("LudoPinelli/comment-box.nvim")
 	--  vscode-like pictograms for neovim lsp completion items
 	use("onsails/lspkind.nvim")
+	-- sourcegraph for NeoVim
+	use("tjdevries/sg.nvim")
+	--  cmp source for treesitter
+	use("ray-x/cmp-treesitter")
 
 	-- 	---------------------------------------------------------------------------- }}}k
 	-- 	-------------------------------  Debug Adapter ------------------------------ {{{
