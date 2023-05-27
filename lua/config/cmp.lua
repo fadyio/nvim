@@ -10,38 +10,12 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+local lspkind = require("lspkind")
+
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
-
--- local kind_icons = {
--- 	Text = "",
--- 	Method = "",
--- 	Function = "",
--- 	Constructor = "",
--- 	Field = "",
--- 	Variable = "",
--- 	Class = "",
--- 	Interface = "",
--- 	Module = "",
--- 	Property = "",
--- 	Unit = "",
--- 	Value = "",
--- 	Enum = "",
--- 	Keyword = "",
--- 	Snippet = "",
--- 	Color = "",
--- 	File = "",
--- 	Reference = "",
--- 	Folder = "",
--- 	EnumMember = "",
--- 	Constant = "",
--- 	Struct = "",
--- 	Event = "",
--- 	Operator = "",
--- 	TypeParameter = "",
--- }
 
 cmp.setup({
 	snippet = {
@@ -91,7 +65,13 @@ cmp.setup({
 			"s",
 		}),
 	}),
-	formatting = { format = require("lspkind").cmp_format() },
+	formatting = {
+		format = lspkind.cmp_format({
+			mode = "symbol_text",
+			with_text = true,
+			maxwidth = 50,
+		}),
+	},
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
@@ -149,24 +129,3 @@ cmp.setup.cmdline("/", {
 		{ name = "buffer" },
 	},
 })
-
---  see https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-add-visual-studio-code-dark-theme-colors-to-the-menu
--- vim.cmd([[
---   highlight! link CmpItemMenu Comment
---   " gray
---   highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
---   " blue
---   highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
---   highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
---   " light blue
---   highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
---   highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
---   highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
---   " pink
---   highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
---   highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
---   " front
---   highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
---   highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
---   highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
--- ]])

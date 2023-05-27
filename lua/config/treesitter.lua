@@ -1,6 +1,6 @@
 -- Written by @Fadynagh from http://fadyio.com
 -- Email:me@fadyio.com
--- Github: @fady0
+-- Github: @fadyio
 --
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
@@ -8,9 +8,9 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = "all",
+	ensure_installed = {"go", "lua", "javascript", "python", "bash"},
+	auto_install = true,
 	sync_install = false,
-	ignore_install = { "jsonc", "fusion", "ocamllex", "phpdoc" },
 
 	autopairs = {
 		enable = true,

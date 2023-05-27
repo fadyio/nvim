@@ -23,8 +23,8 @@ nvim_tree.setup({
 				default = "",
 				symlink = "",
 				folder = {
-					arrow_closed = "", -- arrow when folder is closed
-					arrow_open = "", -- arrow when folder is open
+					arrow_closed = "", -- arrow when folder is closed
+					arrow_open = "", -- arrow when folder is open
 					default = "",
 					open = "",
 					empty = "",
@@ -48,7 +48,7 @@ nvim_tree.setup({
 		enable = true,
 		show_on_dirs = true,
 		icons = {
-			hint = "",
+			hint = "",
 			info = "",
 			warning = "",
 			error = "",
@@ -56,6 +56,5 @@ nvim_tree.setup({
 	},
 	view = {
 		width = 30,
-		side = "left",
 	},
 })

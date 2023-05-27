@@ -1,7 +1,7 @@
 --[[
  -- Written by @Fadynagh from http://fadyio.com
  -- Email:me@fadyio.com
- -- Github: @fady0
+ -- Github: @fadyio
 ---------------------------------------------------------------------
                                  My Neovim Config
 ---------------------------------------------------------------------
@@ -25,7 +25,7 @@ end
 --- All My Settings
 require("options")
 --- All My plugins
-require("plugins")
+require("Plugins")
 --- All My Keybindings
 require("keybindings")
 --- load autocommands

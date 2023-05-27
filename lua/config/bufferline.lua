@@ -5,6 +5,17 @@ end
 
 bufferline.setup({
 	options = {
+	mode = "buffers", -- set to "tabs" to only show tabpages instead
+	           style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
+	           numbers = "ordinal",
+	           buffer_close_icon = '',
+	           modified_icon = '●',
+            close_icon = '',
+            left_trunc_marker = '',
+            right_trunc_marker = '',
+            max_name_length = 18,
+            tab_size = 18,
+             diagnostics = "nvim_lsp",
 		close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 		right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
@@ -39,94 +50,4 @@ bufferline.setup({
 	vim.keymap.set("n", "<Leader>9", function()
 		require("bufferline").go_to_buffer(9, true)
 	end, { noremap = true, silent = true }),
-
-	highlights = {
-		-- 	fill = {
-		-- 		fg = { attribute = "fg", highlight = "#ff0000" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	background = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	buffer_visible = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	close_button = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		-- 	close_button_visible = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	tab_selected = {
-		-- 		fg = { attribute = "fg", highlight = "Normal" },
-		-- 		bg = { attribute = "bg", highlight = "Normal" },
-		-- 	},
-		--
-		-- 	tab = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	tab_close = {
-		-- 		-- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
-		-- 		fg = { attribute = "fg", highlight = "TabLineSel" },
-		-- 		bg = { attribute = "bg", highlight = "Normal" },
-		-- 	},
-		--
-		-- 	duplicate_selected = {
-		-- 		fg = { attribute = "fg", highlight = "TabLineSel" },
-		-- 		bg = { attribute = "bg", highlight = "TabLineSel" },
-		-- 		italic = true,
-		-- 	},
-		--
-		-- 	duplicate_visible = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 		italic = true,
-		-- 	},
-		--
-		-- 	duplicate = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 		italic = true,
-		-- 	},
-		--
-		-- 	modified = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	modified_selected = {
-		-- 		fg = { attribute = "fg", highlight = "Normal" },
-		-- 		bg = { attribute = "bg", highlight = "Normal" },
-		-- 	},
-		--
-		-- 	modified_visible = {
-		-- 		fg = { attribute = "fg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	separator = {
-		-- 		fg = { attribute = "bg", highlight = "TabLine" },
-		-- 		bg = { attribute = "bg", highlight = "TabLine" },
-		-- 	},
-		--
-		-- 	separator_selected = {
-		-- 		fg = { attribute = "bg", highlight = "Normal" },
-		-- 		bg = { attribute = "bg", highlight = "Normal" },
-		-- 	},
-		--
-		-- 	indicator_selected = {
-		-- 		fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-		-- 		bg = { attribute = "bg", highlight = "Normal" },
-		-- 	},
-	},
 })
