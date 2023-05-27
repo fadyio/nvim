@@ -36,8 +36,6 @@ local plugins = {
 	"tami5/sqlite.lua",
 	-- customizable start screen for neovim.
 	{ "goolord/alpha-nvim", lazy = true },
-	-- A feature-rich Go development plugin
-	"ray-x/go.nvim",
 	-- display a popup with possible key bindings of the command you started typing
 	{ "folke/which-key.nvim", lazy = true },
 	-- adds indentation guides to all lines (including empty lines).
