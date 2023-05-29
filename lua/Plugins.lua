@@ -130,7 +130,16 @@ local plugins = {
 	"nvim-telescope/telescope-file-browser.nvim",
 	--  The superior project management solution for Neovim
 	"ahmedkhalf/project.nvim",
-
+	-- Neovim plugin to preview the contents of the registers
+	{
+		"tversteeg/registers.nvim",
+		name = "registers",
+		keys = {
+			{ '"', mode = { "n", "v" } },
+			{ "<C-R>", mode = "i" },
+		},
+		cmd = "Registers",
+	},
 	---------------------------------------------------------------------------- }}}
 	-------------------------------  colorScheme  ------------------------------ {{{
 
