@@ -30,6 +30,7 @@ vim.opt.undofile = true -- automatically saves undo history
 vim.opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.g.did_load_filetypes = 0 -- Do not use built in filetype.vim as we use filetype.nvim instead
+vim.opt.filetype = "on"  -- turn filetype on
 vim.g.neoterm_autoinsert = 0 -- Do not start terminal in insert mode
 vim.opt.foldenable = true -- Enable folding
 vim.opt.swapfile = false -- creates a swapfile

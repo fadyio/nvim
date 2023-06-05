@@ -20,8 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 
-	-- Replace default filetype.vim which is slower
-	"nathom/filetype.nvim",
 	-- An implementation of the Popup API from vim in Neovim
 	"nvim-lua/popup.nvim",
 	-- UI Component Library for Neovim.

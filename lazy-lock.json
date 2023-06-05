@@ -13,7 +13,6 @@
   "cmp-zsh": { "branch": "main", "commit": "c24db8e58fac9006ec23d93f236749288d00dec9" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "comment-box.nvim": { "branch": "main", "commit": "6672213bd5d2625a666a297b66307967effa50bc" },
-  "filetype.nvim": { "branch": "main", "commit": "b522628a45a17d58fc0073ffd64f9dc9530a8027" },
   "friendly-snippets": { "branch": "main", "commit": "0dd6114bea08276d9111d58c5dce5e256bbc8921" },
   "gitsigns.nvim": { "branch": "main", "commit": "f868d82a36f7f7f5e110eb0a9659993984f59875" },
   "gruvbox-material": { "branch": "master", "commit": "3fff63b0d6a425ad1076a260cd4f6da61d1632b1" },
