@@ -70,6 +70,16 @@ require("lazy").setup({
 			require("lsp_lines").setup()
 		end,
 	},
+	--  A feature-rich Go development plugin
+	{
+		"ray-x/go.nvim",
+		config = function()
+			require("go").setup()
+		end,
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
+		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+	},
 	-- null-ls.nvim
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	--  Neovim file explorer: edit your filesystem like a buffer

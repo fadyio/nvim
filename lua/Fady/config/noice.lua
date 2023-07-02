@@ -13,7 +13,6 @@ vim.notify = require("notify")
 require("notify").setup({
 	background_colour = "#cba6f7",
 })
-
 noice.setup({
 	lsp = {
 		override = {
