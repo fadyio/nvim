@@ -82,18 +82,16 @@ require("lazy").setup({
 	},
 	-- null-ls.nvim
 	{ "jose-elias-alvarez/null-ls.nvim" },
-	--  Neovim file explorer: edit your filesystem like a buffer
-	{ "stevearc/oil.nvim", opts = {} },
 	--  A file explorer tree for neovim written in lua
 	{ "nvim-tree/nvim-tree.lua" },
 	-- display a popup with possible key bindings of the command you started typing
 	{ "folke/which-key.nvim", lazy = true },
 	--  Clarify and beautify your comments using boxes and lines.
-	{ "LudoPinelli/comment-box.nvim" },
+	{ "LudoPinelli/comment-box.nvim", event = "VeryLazy" },
 	-- Smart and Powerful commenting plugin for neovim
-	{ "numToStr/Comment.nvim" },
+	{ "numToStr/Comment.nvim", event = "VeryLazy" },
 	-- Lazygit
-	{ "kdheepak/lazygit.nvim" },
+	{ "kdheepak/lazygit.nvim", event = "VeryLazy" },
 	-- A pretty diagnostics, references, telescope results, quickfix and location list
 	{ "folke/trouble.nvim" },
 	-- white_check_mark Highlight, list and search todo comments in your projects

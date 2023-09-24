@@ -29,6 +29,12 @@ noice.setup({
 		inc_rename = false, -- enables an input dialog for inc-rename.nvim
 		lsp_doc_border = true, -- add a border to hover docs and signature help
 	},
+	routes = {
+		{
+			view = "notify",
+			filter = { event = "msg_showmode" },
+		},
+	},
 	popupmenu = {
 		enabled = true, -- enables the Noice popupmenu UI
 		---@type 'nui'|'cmp'
