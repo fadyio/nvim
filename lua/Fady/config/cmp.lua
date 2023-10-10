@@ -20,6 +20,11 @@ local has_words_before = function()
 end
 
 local lspkind = require("lspkind")
+lspkind.init({
+	symbol_map = {
+		Copilot = "",
+	},
+})
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 require("luasnip/loaders/from_vscode").lazy_load()
@@ -89,12 +94,12 @@ cmp.setup({
 		format = lspkind.cmp_format({
 			mode = "symbol_text", -- show only symbol annotations
 			menu = {
-				buffer = "[]",
-				copilot = "[ ]",
-				nvim_lsp = "[ ]",
-				luasnip = "[ ]",
-				path = "[ ]",
-				nvim_lua = "[]",
+				buffer = "",
+				copilot = "",
+				nvim_lsp = "",
+				luasnip = "",
+				path = "",
+				nvim_lua = "",
 			},
 			maxwidth = 20, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 			ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
