@@ -25,7 +25,6 @@ configs.setup({
 		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
 	},
 	indent = { enable = true, disable = { "" } },
-	context_commentstring = { enable = true },
 	autotag = { enable = true },
 	endwise = { enable = true },
 })
