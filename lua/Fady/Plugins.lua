@@ -106,8 +106,6 @@ require("lazy").setup({
 	{ "folke/trouble.nvim" },
 	-- white_check_mark Highlight, list and search todo comments in your projects
 	{ "folke/todo-comments.nvim" },
-	-- wakatime plugin
-	{ "wakatime/vim-wakatime" },
 	--  Neovim's answer to the mouse
 	{
 		"ggandor/leap.nvim",
