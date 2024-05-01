@@ -33,9 +33,5 @@ null_ls.setup({
 		end
 	end,
 	sources = {
-		-- 	-- formatting
-		formatting.shellharden, -- For shell
-		formatting.trim_newlines.with({ disabled_filetypes = { "yaml", "yml" } }), -- A simple wrapper around awk to remove trailing newlines.
-		formatting.trim_whitespace.with({ disabled_filetypes = { "yml", "yaml" } }), -- A simple wrapper around awk to remove trailing whitespace.
 	},
 })

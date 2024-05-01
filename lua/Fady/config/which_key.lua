@@ -67,7 +67,7 @@ local setup = {
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	show_help = true, -- show help message on the command line when the popup is visible
 	triggers = "auto", -- automatically setup triggers
-	-- triggers = {"<leader>"} -- or specify a list manually
+	triggers_nowait = { "z=" },
 	triggers_blacklist = {
 		-- list of mode / prefixes that should never be hooked by WhichKey
 		-- this is mostly relevant for key maps that start with a native binding
@@ -103,7 +103,7 @@ local mappings = {
 	["x"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-	["U"] = { "<cmd>Telescope undo<cr>", "Find files" },
+	["U"] = { "<cmd>Telescope undo<cr>", "Undo Tree" },
 	["z"] = {
 		"<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>",
 		"Find hidden files",
@@ -111,7 +111,7 @@ local mappings = {
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	g = {
 		name = "Git",
-		g = { "<cmd>LazyGit<cr>", "Lazygit" },
+		g = { "<cmd>Neogit<cr>", "NeoGit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -119,6 +119,8 @@ local mappings = {
 		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+		d = { "<cmd>DiffviewOpen<cr>", "Diff Open" },
+		h = { "<cmd>DiffviewFileHistory<cr>", "Diff File History" },
 		u = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
 			"Undo Stage Hunk",
@@ -130,15 +132,10 @@ local mappings = {
 			"<cmd>Telescope git_bcommits<cr>",
 			"Checkout commit(for current file)",
 		},
-		d = {
-			"<cmd>Gitsigns diffthis HEAD<cr>",
-			"Git Diff",
-		},
 	},
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
 		d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
@@ -151,7 +148,6 @@ local mappings = {
 			vim.diagnostic.goto_prev,
 			"Prev Diagnostic",
 		},
-		l = { vim.lsp.codelens.run, "CodeLens Action" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -174,14 +170,23 @@ local mappings = {
 		l = { "<cmd>TodoLocList<CR>", "Todo LocList" }, --This uses the location list to show all todos in your project.
 		t = { "<cmd>TodoTelescope<CR>", "Todo Telescope" }, --Search through all project todos with Telescope
 	},
+	c = {
+		name = "Copilot",
+		c = { "<cmd>CopilotChatToggle<CR>", "Open chat" },
+		s = { "<cmd>CopilotChatSave<CR>", "Save chat" },
+	},
+	d = {
+		name = "Debugging",
+		t = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Breaking point" },
+		c = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
+		c = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
+	},
 	s = {
 		name = "Search",
-		f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		d = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		t = { "<cmd>Telescope live_grep<cr>", "Text" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		c = { "<cmd>Telescope commands<cr>", "Commands" },
 		p = {

@@ -20,7 +20,6 @@ vim.g.maplocalleader = " "
 -- keymap("n", "<C-j>", "<C-w>j", opts)
 -- keymap("n", "<C-k>", "<C-w>k", opts)
 -- keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
@@ -80,22 +79,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Comment and Comment box
 vim.keymap.set("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 vim.keymap.set("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
--- left aligned fixed size box with left aligned text
-vim.keymap.set("n", "<Leader>bb", "<Cmd>lua require('comment-box').lbox()<CR>", {})
-vim.keymap.set("v", "<Leader>bb", "<Cmd>lua require('comment-box').lbox()<CR>", {})
--- centered adapted box with centered text
-vim.keymap.set("n", "<Leader>bc", "<Cmd>lua require('comment-box').acbox()<CR>", {})
-vim.keymap.set("v", "<Leader>bc", "<Cmd>lua require('comment-box').acbox()<CR>", {})
--- LazyGit
-vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
-
---  markdown preview plugin for (neo)vim
-vim.keymap.set("n", "<leader>MM", "<cmd>MarkdownPreviewToggle<CR>", opts)
-vim.keymap.set("n", "<leader>MS", "<cmd>MarkdownPreviewStop<CR>", opts)
 
 -- LSP keymap
-vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+vim.keymap.set("n", "K", "<cmd>lua require('goto-preview').goto_preview_definition() <cr>", opts)
 vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 vim.keymap.set("n", "<F4>", "cmd>lua vim.lsp.buf.range_code_action()<cr>", opts)
 vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)

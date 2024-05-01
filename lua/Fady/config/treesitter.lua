@@ -9,7 +9,6 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = "all",
 	auto_install = true,
 	sync_install = false,
 

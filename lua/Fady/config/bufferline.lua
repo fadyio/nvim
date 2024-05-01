@@ -9,21 +9,20 @@ if not status_ok then
 end
 
 bufferline.setup({
+	highlights = require("catppuccin.groups.integrations.bufferline").get(),
 	options = {
 		mode = "buffers",
 		style_preset = bufferline.style_preset.default,
 		numbers = "ordinal",
 		modified_icon = "",
+		buffer_close_icon = "",
 		close_icon = "",
 		left_trunc_marker = "",
 		right_trunc_marker = "",
-		max_name_length = 15,
+		max_prefix_length = 15,
+		max_name_length = 14,
 		tab_size = 14,
 		color_icons = true,
-
-		highlights = require("catppuccin.groups.integrations.bufferline").get(),
-		close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-		right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 		offsets = {
 			{
 				filetype = "NvimTree",

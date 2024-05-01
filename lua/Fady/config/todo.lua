@@ -18,19 +18,15 @@ require("todo-comments").setup({
 		TODO = { icon = " ", color = "info" },
 		HACK = { icon = " ", color = "warning" },
 		WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-		NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-		TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+		NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+		TEST = { icon = "󰙨 ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
 	},
 	gui_style = {
 		fg = "NONE", -- The gui style to use for the fg highlight group.
 		bg = "BOLD", -- The gui style to use for the bg highlight group.
 	},
 	merge_keywords = true, -- when true, custom keywords will be merged with the defaults
-	-- highlighting of the line containing the todo comment
-	-- * before: highlights before the keyword (typically comment characters)
-	-- * keyword: highlights of the keyword
-	-- * after: highlights after the keyword (todo text)
 	highlight = {
 		multiline = true, -- enable multine todo comments
 		multiline_pattern = "^.", -- lua pattern to match the next multiline from the start of the matched keyword
