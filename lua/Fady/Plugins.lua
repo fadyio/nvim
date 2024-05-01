@@ -59,7 +59,7 @@ require("lazy").setup({
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lua" },
 	{ "zbirenbaum/copilot.lua", lazy = true },
-	{ "CopilotC-Nvim/CopilotChat.nvim" },
+	{ "CopilotC-Nvim/CopilotChat.nvim", lazy = true },
 	{ "AndreM222/copilot-lualine" },
 	{
 		"zbirenbaum/copilot-cmp",
@@ -137,10 +137,10 @@ require("lazy").setup({
 	},
 
 	--------------------------- Dubugger --------------------------------
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = { "leoluz/nvim-dap-go", "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-	},
+	-- {
+	-- 	"rcarriga/nvim-dap-ui",
+	-- 	dependencies = { "leoluz/nvim-dap-go", "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	-- },
 	-------------------------- Telescope -----------------------------
 	{
 		"nvim-telescope/telescope.nvim",
@@ -180,10 +180,15 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{ "HiPhish/rainbow-delimiters.nvim" },
-
-	-- JSON Schemas for neovim
-	{ "someone-stole-my-name/yaml-companion.nvim" },
-	-- colorscheme
+	-- Lua
+	{
+		"folke/twilight.nvim",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 	{
 		"catppuccin/nvim",
 		lazy = false,

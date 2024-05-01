@@ -82,6 +82,7 @@ vim.keymap.set("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.li
 
 -- LSP keymap
 vim.keymap.set("n", "K", "<cmd>lua require('goto-preview').goto_preview_definition() <cr>", opts)
+vim.keymap.set("n", "J", "<cmd>lua require('goto-preview').close_all_win() <cr>", opts)
+-- vim.keymap.set("n", "", "<cmd>lua require('goto-preview').goto_preview_references() <cr>", opts)
 vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-vim.keymap.set("n", "<F4>", "cmd>lua vim.lsp.buf.range_code_action()<cr>", opts)
 vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
