@@ -159,7 +159,7 @@ require("lazy").setup({
 		dependencies = { "rcarriga/nvim-notify" },
 	},
 	-- adds indentation guides to all lines (including empty lines).
-	{ "lukas-reineke/indent-blankline.nvim" },
+	-- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	-- customizable start screen for neovim.
 	{ "goolord/alpha-nvim", lazy = true },
 	-- Nvim-web-devicons
