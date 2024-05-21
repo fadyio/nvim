@@ -35,15 +35,14 @@ require("lazy").setup({
 
 	-------------------------- LSP -----------------------------------
 	-- LSP Support
-	{ "neovim/nvim-lspconfig" },
 	{
-		-- Optional
-		"williamboman/mason.nvim",
-		build = function()
-			pcall(vim.cmd, "MasonUpdate")
-		end,
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+		},
 	},
-	{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 	-- Autocompletion with CMP
 	{ "hrsh7th/nvim-cmp" }, -- Required
 	-- LSP source for nvim-cmp
@@ -60,6 +59,14 @@ require("lazy").setup({
 	{ "zbirenbaum/copilot.lua", lazy = true },
 	{ "CopilotC-Nvim/CopilotChat.nvim", lazy = true },
 	{ "AndreM222/copilot-lualine" },
+	{ "nvimtools/none-ls.nvim" },
+	{ "jay-babu/mason-null-ls.nvim" },
+  	{
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	},
 	{
 		"zbirenbaum/copilot-cmp",
 		config = function()
@@ -68,25 +75,7 @@ require("lazy").setup({
 	},
 	{ "hrsh7th/cmp-cmdline" },
 	{ "onsails/lspkind.nvim" },
-	{
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	},
-	-- Linter and formatter
-	{ "nvimtools/none-ls.nvim" },
-	{ "jay-babu/mason-null-ls.nvim" },
-	--  A feature-rich Go development plugin
-	{
-		"ray-x/go.nvim",
-		config = function()
-			require("go").setup()
-		end,
-		event = { "CmdlineEnter" },
-		ft = { "go", "gomod" },
-		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
-	},
+	---------------------------------------------------------------------
 	--  A file explorer tree for neovim written in lua
 	{ "nvim-tree/nvim-tree.lua" },
 	-- display a popup with possible key bindings of the command you started typing
@@ -126,13 +115,6 @@ require("lazy").setup({
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 	},
-	{
-		"mrcjkb/nvim-lastplace",
-		init = function()
-			-- optional configuration
-		end,
-	},
-
 	--------------------------- Dubugger --------------------------------
 	-- {
 	-- 	"rcarriga/nvim-dap-ui",
@@ -177,7 +159,6 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{ "HiPhish/rainbow-delimiters.nvim" },
-	-- Lua
 	{
 		"folke/twilight.nvim",
 		opts = {

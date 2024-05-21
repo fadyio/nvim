@@ -13,11 +13,6 @@ if not snip_status_ok then
 	return
 end
 
-local has_words_before = function()
-	unpack = unpack or table.unpack
-	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -124,10 +119,6 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	view = {
-		entries = "custom",
-	},
-	completion = {},
 	experimental = {
 		ghost_text = true,
 	},
@@ -146,8 +137,6 @@ cmp.setup({
           }
         })
       })
-
-
     -- `/` cmdline setup.
     cmp.setup.cmdline('/', {
         mapping = cmp.mapping.preset.cmdline(),

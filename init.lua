@@ -21,11 +21,11 @@ end
 ------------------------------------------------------
 --- All My plugins and it's configurations
 --- All My Settings
-require("Fady/options")
+require("options")
 -- All my Plugins
-require("Fady/Plugins")
+require("Plugins")
 --- All My Keybindings
-require("Fady/keybindings")
+require("keybindings")
 --- load autocommands
-require("Fady/autocommands")
-requirePath("Fady/config")
+require("autocmds")
+requirePath("config")

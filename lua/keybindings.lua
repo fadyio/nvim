@@ -77,8 +77,8 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- LSP keymap
-vim.keymap.set("n", "K", "<cmd>lua require('goto-preview').goto_preview_definition() <cr>", opts)
-vim.keymap.set("n", "J", "<cmd>lua require('goto-preview').close_all_win() <cr>", opts)
+keymap("n", "K", "<cmd>lua require('goto-preview').goto_preview_definition() <cr>", opts)
+keymap("n", "J", "<cmd>lua require('goto-preview').close_all_win() <cr>", opts)
 -- vim.keymap.set("n", "", "<cmd>lua require('goto-preview').goto_preview_references() <cr>", opts)
-vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+keymap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
