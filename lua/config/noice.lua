@@ -11,6 +11,12 @@ require("notify").setup({
 })
 
 require("noice").setup({
+	routes = {
+		{
+			view = "notify",
+			filter = { event = "msg_showmode" },
+		},
+	},
 	views = {
 		cmdline_popup = {
 			border = {
@@ -38,17 +44,5 @@ require("noice").setup({
 		long_message_to_split = true, -- long messages will be sent to a split
 		inc_rename = false, -- enables an input dialog for inc-rename.nvim
 		lsp_doc_border = false, -- add a border to hover docs and signature help
-		routes = {
-			{
-				view = "notify",
-				filter = { event = "msg_showmode" },
-			},
-		},
-		popupmenu = {
-			enabled = true, -- enables the Noice popupmenu UI
-			---@type 'nui'|'cmp'
-			backend = "nui", -- backend to use to show regular cmdline completions
-			---@type NoicePopupmenuItemKind|false
-		},
 	},
 })

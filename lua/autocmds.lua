@@ -3,9 +3,14 @@
 --                │             Email:me@fadyio.com             │
 --                │               Github: @fadyio               │
 --                ╰─────────────────────────────────────────────╯
+-- Function to create a new autocommand group with a specified name
 local function augroup(name)
+	-- Create the autocommand group using Neovim's API
+	-- Concatenate "lazyvim_" with the given name to form the group name
+	-- The { clear = true } option ensures any existing autocommands in the group are cleared
 	return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd("FileType", {
 	group = augroup("close_with_q"),
@@ -133,23 +138,9 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	end,
 })
 
--- disable the virtual text
-vim.diagnostic.config({
-	virtual_text = false,
-	virtual_lines = { only_current_line = true },
-	underline = false,
-	severity_sort = true,
-	float = {
-		border = "rounded",
-	},
-})
-
--- Create an autocommand group named 'goimports'
- local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-   require('go.format').goimports()
-  end,
-  group = format_sync_grp,
-})
+-- Change diagnostic symbols in the sign column (gutter)
+local signs = { Error = "", Warn = "", Hint = "", Info = "󰬐" }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end

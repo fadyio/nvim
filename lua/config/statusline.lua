@@ -12,20 +12,20 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 local mode_icons = {
-	["n"] = " 󰢀",
-	["no"] = " 󰢀",
-	["nov"] = " 󰢀",
-	["noV"] = " 󰢀",
-	["niI"] = " 󰢀",
-	["niR"] = " 󰢀",
-	["niV"] = " 󰢀",
+	["n"] = " ",
+	["no"] = " ",
+	["nov"] = " ",
+	["noV"] = " ",
+	["niI"] = " ",
+	["niR"] = " ",
+	["niV"] = " ",
 	["v"] = " ",
 	["V"] = " ",
-	["s"] = " 󰬚",
-	["S"] = " 󰬚",
-	["i"] = " ",
-	["ic"] = " ",
-	["ix"] = " ",
+	["s"] = " ",
+	["S"] = " ",
+	["i"] = " I",
+	["ic"] = " I",
+	["ix"] = " I",
 	["R"] = " ",
 	["Rc"] = " ",
 	["Rv"] = " ",
@@ -33,12 +33,12 @@ local mode_icons = {
 	["r"] = " ",
 	["rm"] = " ",
 	["r?"] = " ",
-	["c"] = " ",
-	["cv"] = " ",
-	["ce"] = " ",
-	["!"] = " ",
-	["t"] = " 󰬛",
-	["nt"] = " 󰬛",
+	["c"] = " ",
+	["cv"] = " ",
+	["ce"] = " ",
+	["!"] = " ",
+	["t"] = " 󰰤",
+	["nt"] = " 󰰤",
 }
 
 local function get_mode()
@@ -54,9 +54,9 @@ end
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info", "hint" },
-	symbols = { error = " ", warn = " ", hint = " ", info = " " },
-	colored = false,
+	sections = { "error", "warn", "hint", "info" },
+	symbols = { error = " ", warn = " ", hint = " ", info = "󰬐 " },
+	colored = true,
 	always_visible = true,
 }
 
@@ -92,10 +92,9 @@ lualine.setup({
 		lualine_b = { "branch", diff, diagnostics },
 		lualine_c = { "filename" },
 		lualine_x = { "encoding", "fileformat", filetype },
-		lualine_y = { 'copilot', '"  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))' },
+		lualine_y = { "copilot", '"Lsp " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))' },
 		lualine_z = { "location", "progress" },
 	},
 	tabline = {},
 	extensions = {},
 })
-

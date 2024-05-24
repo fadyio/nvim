@@ -8,6 +8,28 @@
 local lspconfig = require("lspconfig")
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"lua_ls",
+		"ansiblels",
+		"bashls",
+		"gopls",
+		"jsonls",
+		"pyright",
+		"yamlls",
+		"rust_analyzer",
+		"terraformls",
+	},
+	automatic_installation = true,
+})
+local get_servers = require("mason-lspconfig").get_installed_servers
+for _, server_name in ipairs(get_servers()) do
+	lspconfig[server_name].setup({
+		capabilities = lsp_capabilities,
+	})
+end
+
 lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
@@ -33,6 +55,7 @@ lspconfig["gopls"].setup({
 	filetype = { "go", "gomod", "gowork", "gotmpl" },
 	lsroot_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"),
 })
+
 lspconfig.yamlls.setup({
 	on_attach = on_attach,
 	filetypes = { "yaml", "yml" },
@@ -100,25 +123,12 @@ lspconfig.yamlls.setup({
 	},
 })
 
-require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"lua_ls",
-		"ansiblels",
-		"bashls",
-		"gopls",
-		"jsonls",
-		"pyright",
-		"yamlls",
-		"rust_analyzer",
-		"terraformls",
-	},
-	automatic_installation = true,
+-- Create an autocommand group named 'goimports'
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.go",
+	callback = function()
+		require("go.format").goimports()
+	end,
+	group = format_sync_grp,
 })
-local get_servers = require("mason-lspconfig").get_installed_servers
-for _, server_name in ipairs(get_servers()) do
-	lspconfig[server_name].setup({
-		capabilities = lsp_capabilities,
-	})
-end
-

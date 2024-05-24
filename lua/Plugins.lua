@@ -35,54 +35,44 @@ require("lazy").setup({
 
 	-------------------------- LSP -----------------------------------
 	-- LSP Support
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-		},
-	},
-	-- Autocompletion with CMP
-	{ "hrsh7th/nvim-cmp" }, -- Required
-	-- LSP source for nvim-cmp
-	{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
+	{ "neovim/nvim-lspconfig" },
 	{
 		"L3MON4D3/LuaSnip",
 		build = "make install_jsregexp",
 		dependencies = { "rafamadriz/friendly-snippets" },
 	},
+	-- Autocompletion with CMP
+	{ "hrsh7th/nvim-cmp" },
+	-- LSP source for nvim-cmp
+	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-buffer" },
 	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-cmdline" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lua" },
 	{ "zbirenbaum/copilot.lua", lazy = true },
+	{ "ray-x/cmp-sql" },
 	{ "CopilotC-Nvim/CopilotChat.nvim", lazy = true },
 	{ "AndreM222/copilot-lualine" },
-	{ "nvimtools/none-ls.nvim" },
-	{ "jay-babu/mason-null-ls.nvim" },
-  {
-  "ray-x/go.nvim",
-  config = function()
-    require("go").setup()
-  end,
-  event = {"CmdlineEnter"},
-  ft = {"go", 'gomod'},
-  build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-},
-  	{
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	},
 	{
 		"zbirenbaum/copilot-cmp",
 		config = function()
 			require("copilot_cmp").setup()
 		end,
 	},
-	{ "hrsh7th/cmp-cmdline" },
+	{ "nvimtools/none-ls.nvim" },
+	{ "jay-babu/mason-null-ls.nvim" },
+	{
+		"ray-x/go.nvim",
+		config = function()
+			require("go").setup()
+		end,
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
+		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+	},
 	{ "onsails/lspkind.nvim" },
 	---------------------------------------------------------------------
 	--  A file explorer tree for neovim written in lua
@@ -104,13 +94,26 @@ require("lazy").setup({
 			require("goto-preview").setup({})
 		end,
 	},
+
+	{
+		"abecodes/tabout.nvim",
+		config = function()
+			require("tabout").setup({
+				tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
+				backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
+				enable_backwards = true, -- well ...
+				completion = true, -- if the tabkey is used in a completion pum
+			})
+		end,
+		after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
+	},
 	--  Neovim's answer to the mouse
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		---@type Flash.Config
 		opts = {},
-    -- stylua: ignore
+    --stylua: ignore
     keys = {
       { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
       { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
@@ -123,7 +126,9 @@ require("lazy").setup({
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
+		config = true,
 	},
+
 	--------------------------- Dubugger --------------------------------
 	-- {
 	-- 	"rcarriga/nvim-dap-ui",
