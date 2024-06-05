@@ -95,7 +95,6 @@ cmp.setup({
 				luasnip = "",
 				copilot = "",
 				nvim_lua = "",
-				sql = "",
 				buffer = "",
 				path = "",
 			},
@@ -113,7 +112,6 @@ cmp.setup({
 		{ name = "copilot", group_index = 2 },
 		{ name = "nvim_lua" },
 		{ name = "path" },
-		{ name = "sql" },
 		{ name = "buffer", keyword_length = 2 },
 	}),
 	confirm_opts = {

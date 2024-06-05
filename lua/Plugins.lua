@@ -53,7 +53,6 @@ require("lazy").setup({
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lua" },
 	{ "zbirenbaum/copilot.lua", lazy = true },
-	{ "ray-x/cmp-sql" },
 	{ "CopilotC-Nvim/CopilotChat.nvim", lazy = true },
 	{ "AndreM222/copilot-lualine" },
 	{

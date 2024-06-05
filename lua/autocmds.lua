@@ -144,3 +144,16 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+-- Remove whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "",
+	command = ":%s/\\s\\+$//e",
+})
+
+vim.cmd([[
+  augroup Man
+    autocmd!
+    autocmd FileType man setlocal number relativenumber
+  augroup END
+]])
