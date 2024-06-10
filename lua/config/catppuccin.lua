@@ -69,3 +69,12 @@ require("catppuccin").setup({
 
 -- setup must be called before loading
 vim.cmd.colorscheme("catppuccin")
+
+require("colorizer").setup({
+	"css",
+	"javascript",
+	"json",
+	html = {
+		mode = "foreground",
+	},
+})

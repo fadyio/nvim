@@ -74,10 +74,39 @@ require("lazy").setup({
 	},
 	{ "onsails/lspkind.nvim" },
 	---------------------------------------------------------------------
-	--  A file explorer tree for neovim written in lua
-	{ "nvim-tree/nvim-tree.lua" },
+	--  A file explorer yazi
+	---@type LazySpec
+	{
+		"mikavilpas/yazi.nvim",
+		event = "VeryLazy",
+		keys = {
+			-- 👇 in this section, choose your own keymappings!
+			{
+				"<leader>-",
+				function()
+					require("yazi").yazi()
+				end,
+				desc = "Open the file manager",
+			},
+			{
+				-- Open in the current working directory
+				"<leader>e",
+				function()
+					require("yazi").yazi(nil, vim.fn.getcwd())
+				end,
+				desc = "Open the file manager in nvim's working directory",
+			},
+		},
+		---@type YaziConfig
+		opts = {
+			open_for_directories = true,
+			floating_window_scaling_factor = 0.8,
+		},
+	},
 	-- display a popup with possible key bindings of the command you started typing
 	{ "folke/which-key.nvim", lazy = true },
+	--  The fastest Neovim colorizer.
+	{ "norcalli/nvim-colorizer.lua" },
 	-- Neogit
 	{ "NeogitOrg/neogit" },
 	-- Diffview
